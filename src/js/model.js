@@ -8,7 +8,6 @@ export const state = {
 
 export const loadRecipe = async function (id) {
     try{
-        console.log(`----->${API_URL}/${id}`)
         const data = await getJSON(`${API_URL}/${id}`);
 
         const { recipe } = data.data;
@@ -22,9 +21,7 @@ export const loadRecipe = async function (id) {
             cookingTime: recipe.cooking_time,
             ingredients: recipe.ingredients,
         };
-        console.log(state.recipe);
     } catch (err){
-        alert('model problem' + err);
-    };
+        console.error(`${err} ******`)};
 };
 
