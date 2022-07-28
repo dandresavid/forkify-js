@@ -7,8 +7,6 @@ import 'regenerator-runtime/runtime'
 
 const recipeContainer = document.querySelector('.recipe');
 
-// https://forkify-api.herokuapp.com/api/v2/recipes/5ed6604591c37cdc054bc886
-
 // https://forkify-api.herokuapp.com/v2
 
 ///////////////////////////////////////
@@ -27,7 +25,7 @@ const controlRecipes = async function() {
     recipeView.render(model.state.recipe);
     
   } catch (err) {
-    console.log(err);
+    recipeView.renderError();
   }
 };
 
