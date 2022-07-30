@@ -44,10 +44,8 @@ export const loadSearchResults = async function(query){
                 image: rec.image_url,
             };
         });
-
     } catch (err) {
         console.log(`${err} ****`)
         throw err;
     }
 };
-loadSearchResults('pizza');
