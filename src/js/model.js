@@ -23,7 +23,7 @@ export const loadRecipe = async function (id) {
             publisher: recipe.publisher,
             sourceUrl: recipe.source_url,
             image: recipe.image_url,
-            servings: recipe.cooking_time,
+            servings: recipe.servings,
             cookingTime: recipe.cooking_time,
             ingredients: recipe.ingredients,
         };
@@ -60,4 +60,12 @@ export const getSearchResultsPage = function(page= state.search.page){
 
     return state.search.results.slice(start, end);
 
+}
+
+export const updateServings = function(newServings){
+    state.recipe.ingredients.forEach(ing =>{
+        ing.quantity = (ing.quantity * newServings) / state.recipe.servings 
+    });
+    
+    state.recipe.servings = newServings;
 }
